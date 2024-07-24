@@ -1,0 +1,65 @@
+/* Estilos generales de la página */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+}
+
+.container {
+    background: #fff;
+    padding: 20px 40px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    margin-bottom: 20px;
+    font-size: 2em;
+    color: #333;
+}
+
+p {
+    margin-bottom: 30px;
+    color: #666;
+    font-size: 1.1em;
+}
+
+/* Estilos del botón */
+.button {
+    display: inline-block;
+    padding: 15px 30px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #fff;
+    background: linear-gradient(45deg, #6a11cb, #2575fc);
+    border: none;
+    border-radius: 30px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: background 0.3s, box-shadow 0.3s, transform 0.3s;
+    text-decoration: none;
+    text-align: center;
+}
+
+.button:hover {
+    background: linear-gradient(45deg, #5a0dbc, #2069f3);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    transform: scale(1.05);
+}
+
+.button:active {
+    background: linear-gradient(45deg, #4a0bab, #1b5ee3);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transform: scale(0.95);
+}
+
+.button:focus {
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(106, 17, 203, 0.5);
+}
