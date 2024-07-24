@@ -14,13 +14,11 @@ Este proyecto es una demostración de cómo integrar Keycloak para autenticació
      - `client_id`
      - `redirect_uri`
 
-2. **Actualizar el HTML**:
-   - Reemplaza las siguientes partes en el archivo `index.html` con los valores correspondientes a tu configuración de Keycloak:
-     - `client_id`
-     - `redirect_uri`
-
 3. **Actualizar el JavaScript**:
-   - Asegúrate de que la URL de redirección a tu web (`REDIRECTION_URL`) en el archivo `main.js` esté correctamente configurada para tu entorno.
+   - Asegúrate de reemplazar las siguientes variables:
+     - `HOST`
+     - `REDIRECTION_URL`
+     - `CLIENT_ID`
 
 ## Archivos del Proyecto
 
