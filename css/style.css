@@ -5,19 +5,22 @@ body {
     margin: 0;
     padding: 0;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
     height: 100vh;
     text-align: center;
 }
 
+/* Estilos para el contenedor */
 .container {
     background: #fff;
     padding: 20px 40px;
     border-radius: 10px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    margin-top: 60px; /* Añadimos un margen superior para que no se superponga con el nav */
 }
 
+/* Estilos del encabezado */
 h1 {
     margin-bottom: 20px;
     font-size: 2em;
@@ -62,4 +65,58 @@ p {
 .button:focus {
     outline: none;
     box-shadow: 0 0 0 4px rgba(106, 17, 203, 0.5);
+}
+
+/* Estilos del nav */
+nav {
+    width: 100%;
+    background: #333333;
+    padding: 10px 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    margin: 0;
+    padding: 0 20px;
+}
+
+nav ul li {
+    margin: 0 15px;
+    color: #fff;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1em;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Estilos de la tarjeta de información del usuario */
+.card {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    margin: 20px 0;
+}
+
+.card h2 {
+    margin-top: 0;
+    color: #333;
+}
+
+.card p {
+    color: #666;
+    margin: 10px 0;
 }
