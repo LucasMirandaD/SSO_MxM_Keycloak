@@ -5,3 +5,4 @@ export const URL_BASE_KEYCLOAK = 'http://dicmxmkeycloakdev.mendoza.gov.ar/realms
 export const CLIENT_ID = 'mxm_dev_Lucas';
 export const REDIRECTION_URL = `${HOST}/SSO_MxM&Keycloak/index.html`;
 export const LOGIN_URL = `${HOST}/SSO_MxM&Keycloak/login.html`;
+export const CLIENT_SECRET = 'hsiXmas23d15asw51fadfasdDAKasd3YNJU';

@@ -1,5 +1,5 @@
 // auth.js
-import { CLIENT_ID, REDIRECTION_URL, URL_BASE_KEYCLOAK } from './config.js';
+import { CLIENT_ID, REDIRECTION_URL, URL_BASE_KEYCLOAK, CLIENT_SECRET } from './config.js';
 import { displayUserInfo } from './user.js';
 import { setupLogoutButton } from './logout.js';
 
@@ -12,9 +12,10 @@ export const keycloak = async () => {
             // Crea los parámetros para el intercambio de código por token
             const params = new URLSearchParams({
                 client_id: CLIENT_ID,
+                client_secret: CLIENT_SECRET,
                 code: code,
                 redirect_uri: REDIRECTION_URL,
-                grant_type: 'authorization_code'
+                grant_type: 'authorization_code',
             });
 
             // Realiza la solicitud para obtener el token
@@ -29,6 +30,7 @@ export const keycloak = async () => {
 
             // Almacena el ID Token para usarlo en el cierre de sesión
             localStorage.setItem('idToken', result.id_token);
+            localStorage.setItem('refreshToken',result.refresh_token);
 
             // Obtiene la información del usuario
             let userInfo = await fetch(`${URL_BASE_KEYCLOAK}/userinfo`, {
@@ -43,7 +45,7 @@ export const keycloak = async () => {
             // Almacena la información del usuario en localStorage
             localStorage.setItem('userName', userInfo.name);
             localStorage.setItem('userEmail', userInfo.email);
-            localStorage.setItem('userDOB', new Date(userInfo.created_at).toLocaleDateString());
+            localStorage.setItem('userDateOfBirdthday', new Date(userInfo.created_at).toLocaleDateString());
             localStorage.setItem('userCUIL', userInfo.sub);
             localStorage.setItem('userRoles', userInfo.realm_access.roles.join(', '));
 

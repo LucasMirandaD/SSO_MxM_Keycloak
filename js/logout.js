@@ -1,4 +1,4 @@
-import { URL_BASE_KEYCLOAK, LOGIN_URL } from './config.js';
+import { URL_BASE_KEYCLOAK, CLIENT_ID, CLIENT_SECRET} from './config.js';
 
 export const setupLogoutButton = () => {
     const logoutButton = document.getElementById('logoutButton');
@@ -6,8 +6,9 @@ export const setupLogoutButton = () => {
         logoutButton.addEventListener('click', () => {
             // Generar la URL de logout
             const logoutParams = new URLSearchParams({
-                id_token_hint: localStorage.getItem('idToken'),
-                post_logout_redirect_uri: LOGIN_URL
+                client_id: CLIENT_ID,
+                refresh_token: localStorage.getItem('refreshToken'),
+                client_secret: CLIENT_SECRET,
             });
 
             fetch(`${URL_BASE_KEYCLOAK}/logout`, {
@@ -19,20 +20,14 @@ export const setupLogoutButton = () => {
             })
             .then(response => {
                 console.log("Status Code: ", response.status);
-                if (response.redirect) {
-                    // Limpiar localStorage
-                    localStorage.removeItem('userName');
-                    localStorage.removeItem('userEmail');
-                    localStorage.removeItem('userDOB');
-                    localStorage.removeItem('userCUIL');
-                    localStorage.removeItem('userRoles');
-                    localStorage.removeItem('idToken');
-
-                    // Redirigir al usuario
-                    window.location.href = LOGIN_URL;
+                // Con el fin de mantenerlo simple no voy a emplear metodos de redireccion al login
+                if (response.status === 204) {
+                    alert("Éxito al cerrar sesión");
+                    localStorage.clear();
                 } else {
+                    
                     response.text().then(errorText => {
-                        console.error('Error during logout:', errorText);
+                    console.error('Error during logout:', errorText);
                     });
                 }
             })
