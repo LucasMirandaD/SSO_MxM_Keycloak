@@ -157,24 +157,3 @@ curl -X POST "${URL_BASE_KEYCLOAK}/userinfo" \
       "family_name": "Miranda"
   }
 ```
-### POST logout
-
-- **URL:** `${URL_BASE_KEYCLOAK}/logout`
-- **Method:** POST
-- **Headers:**
-  - `Content-Type: application/x-www-form-urlencoded`
-- **Body:**
-  - `client_id`: El ID del cliente de tu configuración de Keycloak.
-  - `refresh_token`: El token de actualización de `localStorage`.
-  - `client_secret`: El secreto del cliente de tu configuración de Keycloak.
-- **Descripción:**
-  Cierra la sesión del usuario invalidando el token de actualización. Si el cierre de sesión es exitoso, se muestra una alerta y se limpia `localStorage`.
-
-#### Curl:
-```curl
-curl -X POST "${URL_BASE_KEYCLOAK}/logout" \
-  -H "Content-Type: application/x-www-form-urlencoded" \
-  -d "client_id=${CLIENT_ID}" \
-  -d "refresh_token=${refresh_token}" \
-  -d "client_secret=${CLIENT_SECRET}"
-  ```
