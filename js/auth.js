@@ -45,8 +45,8 @@ export const keycloak = async () => {
             // Almacena la información del usuario en localStorage
             localStorage.setItem('userName', userInfo.name);
             localStorage.setItem('userEmail', userInfo.email);
-            localStorage.setItem('userDateOfBirdthday', new Date(userInfo.created_at).toLocaleDateString());
-            localStorage.setItem('userCUIL', userInfo.sub);
+            localStorage.setItem('userDOB', userInfo.birthdate.toString());
+            localStorage.setItem('userCUIL', userInfo.document_number);
             localStorage.setItem('userRoles', userInfo.realm_access.roles.join(', '));
 
             // Muestra la información del usuario
