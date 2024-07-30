@@ -1,4 +1,4 @@
-# SSO_MxM&Keycloak
+# SSO_MxM_Keycloak
 
 Este proyecto es una demostración de cómo integrar Keycloak para autenticación utilizando HTML y JavaScript. A continuación, se detallan los pasos para configurar y utilizar este proyecto.
 
