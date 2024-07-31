@@ -5,7 +5,8 @@ Este proyecto es una demostración de cómo integrar Keycloak para autenticació
 ## Requisitos
 
 - Un servidor de Keycloak configurado.
-- Un `client_id`, `redirect_uri` y tu `client_secret` .
+- Un `client_id`, `redirect_uri` y tu `client_secret`.
+- Extensión live server de vscode.
 
 ## Configuración
 
