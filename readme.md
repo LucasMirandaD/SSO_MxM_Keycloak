@@ -13,7 +13,6 @@ Este proyecto es una demostración de cómo integrar Keycloak para autenticació
 1. **Configurar Keycloak**:
    - Asegúrate de tener un cliente Keycloak configurado con los siguientes parámetros:
      - `client_id`
-     - `redirect_uri`
      - `client_secret`
 
 2. **Actualizar el archivo de configuración de variables**:
@@ -27,7 +26,6 @@ Este proyecto es una demostración de cómo integrar Keycloak para autenticació
 ## Archivos del Proyecto
 
 **index.html**: Página principal que muestra la información del usuario después de iniciar sesión.
-
 
  **login.html**: Página de inicio de sesión donde el usuario es redirigido para autenticarse.
 
