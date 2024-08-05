@@ -156,7 +156,7 @@ curl -X POST "${URL_BASE_KEYCLOAK}/userinfo" \
       "family_name": "Miranda"
   }
 ```
-## Logout.js
+## Logout.js (No usar)
 
 - **URL:** `${URL_BASE_KEYCLOAK}/logout`
 - **Method:** POST
