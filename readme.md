@@ -164,6 +164,7 @@ curl -X POST "${URL_BASE_KEYCLOAK}/userinfo" \
   }
 ```
 ## Logout.js (No usar)
+### POST logout
 
 - **URL:** `${URL_BASE_KEYCLOAK}/logout`
 - **Method:** POST
