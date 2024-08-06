@@ -6,7 +6,6 @@ Este proyecto es una demostración de cómo integrar Keycloak para autenticació
 
 - Un servidor de Keycloak configurado.
 - Un `client_id`, `redirect_uri` y tu `client_secret`.
-- Extensión live server de vscode.
 
 ## Configuración
 
@@ -22,6 +21,14 @@ Este proyecto es una demostración de cómo integrar Keycloak para autenticació
      - `CLIENT_ID`
      - `CLIENT_SECRET`
      - `URL_BASE_KEYCLOAK`
+
+## Como correr el proyecto: 
+
+- `npm install`
+- `http-server -p 5500`
+- Dirígete a `127.0.0.1:5500/login.html`
+- Si quieres hostear la pagina en tu red local: 
+ `http-server -a 0.0.0.0 -p 5500`
 
 ## Archivos del Proyecto
 
