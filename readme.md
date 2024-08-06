@@ -25,10 +25,10 @@ Este proyecto es una demostración de cómo integrar Keycloak para autenticació
 ## Como correr el proyecto: 
 
 - `npm install`
-- `http-server -p 5500`
+- `npm start`
 - Dirígete a `127.0.0.1:5500/login.html`
 - Si quieres hostear la pagina en tu red local: 
- `http-server -a 0.0.0.0 -p 5500`
+ `npm hosting`
 
 ## Archivos del Proyecto
 
