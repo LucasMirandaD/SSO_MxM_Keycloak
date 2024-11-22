@@ -1,4 +1,4 @@
-import { URL_BASE_KEYCLOAK, CLIENT_ID, CLIENT_SECRET} from './config.js';
+import { URL_BASE_KEYCLOAK, CLIENT_ID, CLIENT_SECRET, LOGIN_URL} from './config.js';
 
 export const setupLogoutButton = () => {
     const logoutButton = document.getElementById('logoutButton');
@@ -9,6 +9,7 @@ export const setupLogoutButton = () => {
                 client_id: CLIENT_ID,
                 refresh_token: localStorage.getItem('refreshToken'),
                 client_secret: CLIENT_SECRET,
+                redirect_uri: LOGIN_URL
             });
 
             fetch(`${URL_BASE_KEYCLOAK}/logout`, {

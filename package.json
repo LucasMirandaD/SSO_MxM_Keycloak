@@ -4,8 +4,8 @@
   "description": "Este proyecto es una demostración de cómo integrar Keycloak para autenticación utilizando HTML y JavaScript. A continuación, se detallan los pasos para configurar y utilizar este proyecto.",
   "main": "index.js",
   "scripts": {
-    "start": "http-server -p 5500",
-    "hosting": "http-server -a 0.0.0.0 -p 5500" 
+    "start": "http-server -p 3000",
+    "hosting": "http-server -a 0.0.0.0 -p 3000"
   },
   "keywords": [],
   "author": "",

@@ -17,16 +17,14 @@ Este proyecto es una demostración de cómo integrar Keycloak para autenticació
 2. **Actualizar el archivo de configuración de variables**:
    - Asegúrate de reemplazar las siguientes variables en el archivo `config.js`:
      - `HOST`
-     - `REDIRECTION_URL`
      - `CLIENT_ID`
      - `CLIENT_SECRET`
-     - `URL_BASE_KEYCLOAK`
 
 ## Como correr el proyecto: 
 
 - `npm install`
 - `npm start`
-- Dirígete a `127.0.0.1:5500/login.html`
+- Dirígete a `127.0.0.1:3000/login.html`
 - Si quieres hostear la pagina en tu red local: 
  `npm hosting`
 
@@ -163,7 +161,7 @@ curl -X POST "${URL_BASE_KEYCLOAK}/userinfo" \
       "family_name": "Miranda"
   }
 ```
-## Logout.js (No usar)
+## Logout.js
 ### POST logout
 
 - **URL:** `${URL_BASE_KEYCLOAK}/logout`
