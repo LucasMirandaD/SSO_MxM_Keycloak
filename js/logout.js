@@ -4,26 +4,29 @@ export const setupLogoutButton = () => {
     const logoutButton = document.getElementById('logoutButton');
     if (logoutButton) {
         logoutButton.addEventListener('click', () => {
+            console.log("Cerrando sesión...");
             // Generar la URL de logout
             const logoutParams = new URLSearchParams({
-                client_id: CLIENT_ID,
-                refresh_token: localStorage.getItem('refreshToken'),
-                client_secret: CLIENT_SECRET,
-                redirect_uri: LOGIN_URL
+                id_token_hint: localStorage.getItem('idToken'),
+                post_logout_redirect_uri: encodeURIComponent(REDIRECTION_URL)
             });
+            
+            console.log("Logout URL: ", `${URL_BASE_KEYCLOAK}/logout?${logoutParams.toString()}`);
+            console.log("logoutParams: ", logoutParams.toString());
 
             fetch(`${URL_BASE_KEYCLOAK}/logout`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/x-www-form-urlencoded',
                 },
-                body: logoutParams.toString(),
+                params: logoutParams.toString(),
             })
             .then(response => {
                 console.log("Status Code: ", response.status);
                 // Con el fin de mantenerlo simple no voy a emplear metodos de redireccion al login
                 if (response.status === 204) {
-                    alert("Éxito al cerrar sesión");
+                    console.log("Éxito al cerrar sesión");
+                    console.log('response Logout: ',response);
                     localStorage.clear();
                 } else {
                     
